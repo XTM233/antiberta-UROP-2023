@@ -20,4 +20,4 @@ Fortunately, a few transformers specialized in antibody sequences have been trai
 
 A selection of heavy chain sequences from the SAbDab database[^sabdab] is used.
  
-[sabdab]: https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabdab/search/
+[^sabdab]: https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabdab/search/
