@@ -12,12 +12,12 @@ However, some limitations are involved in DCA. For example, when analysing conte
 In consideration of these two limitations, masked language model is introduced to study the mutation effects of antibodies. As a masked language model (MLM) makes predictions on the masked symbol given the rest of the sequence, we can make a direct comparison of the <u>softmax</u> output of MLM and the reults of DCA on the conditional distribution of symbols at the same site. Meanwhile, using a transformer with multi-head attention, more insights can be obtained through extracting attention weights of each head. This helps interpret the context dependence of mutations with respect to the structures of headvy chains via the attentions across different regions of the sequences.
 <!-- 还是加一两句 transformeer 的介绍 -->
 
-Fortunately, a few transformers specialized in antibody sequences have been trained and the method of training can be utilised to develope interpretable models in our cases. Specifically, a selection of heavy chains from the __________ database are aligned and used for training of a DCA model and a BERT model respectively. <!-- 介绍 bert -->
+Fortunately, a few transformers specialized in antibody sequences have been trained and the method of training can be utilised to develope interpretable models in our cases. Specifically, the architecture of antiBERTa is adapted to train a masked language model. <!-- 介绍 bert -->
 
 ## Results
 
 ## Experimental procedures
 
-A selection of heavy chain sequences from the SAbDab database[^sabdab] is used.
+A selection of 3146 heavy chain sequences from the SAbDab database[^sabdab] is used.
  
-[^sabdab]: https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabdab/search/
+[sabdab]: https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabdab/search/
