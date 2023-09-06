@@ -136,8 +136,8 @@ dmypy.json
 *test/
 
 # large files
-<<<<<<< HEAD
 .assets/
-=======
+*.pkl
 _assets/
->>>>>>> 0418e9a (exclude data files)
+
+.vscode/
