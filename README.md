@@ -25,7 +25,7 @@ A selection of 3146 heavy chain sequences was downloaded for the training of MLM
 
 <!-- include introduction of vocabulary-->
 
-To conduct a hyperparameter search on the number of heads and the number of layers of the antiBERTa model, a hyperparameter space was constructed incrementally. A preliminary search was completed on the exhaustive combinations of 1-4 heads and 1-4 layers. For each combination of hyperparameters, 10 trainers were built with the above-mentioned datasets respectively. The initialisation of parameters was also randomised according to the same random seed used when generating the partition of the dataset. <!-- describe MLM prob etc --> The mean of the best evaluation loss throughout the training process was taken for each combination of hyperparameters
+To conduct a hyperparameter search on the number of heads and the number of layers of the antiBERTa model, a hyperparameter space was constructed incrementally. A preliminary search was completed on the exhaustive combinations of 1-4 heads and 1-4 layers. For each combination of hyperparameters, 10 trainers were built with the above-mentioned datasets. The initialisation of parameters was also randomised according to the same random seed used when generating the partition of the dataset. <!-- describe MLM prob etc --> The mean of the best evaluation loss throughout the training process was taken for each combination of hyperparameters
 The hyperparameter space was extended according to the trend observed when comparing the average best evaluation loss of models. Evaluation and training of new models were then done recursively until an optimal was detected at the interior of the hyperparameter search.
 
 A model with the lowest test loss was then selected from all 10 models with the optimal combination of hyperparameters. The output of the best model was interpreted from two perspectives:
@@ -40,13 +40,16 @@ A model with the lowest test loss was then selected from all 10 models with the 
 
 ### Hyperparameter selection
 
-![](plots/hs-4-4-by-head)
+![](plots/hs-4-4-by-head.png)
 
-As shown in the plot above, increase in number of hidden layers given the same number of heads improves the performance, in the preliminary hyperparameter search. Meanwhile, the difference in model performance due to different number of heads is diminishing with increasing number of layers. Seen from the heatmap below, the optimal combination of hyperparameters is at the boundary so the hyperparameter search is continued with a expanded hyperparameter space.
+As shown in the plot above, an increase in the number of hidden layers given the same number of heads improves the performance, in the preliminary hyperparameter search. Meanwhile, the difference in model performance due to different numbers of heads is diminishing with increasing number of layers. As een from the heatmap below, the optimal combination of hyperparameters is at the boundary so the hyperparameter search is continued with an expanded hyperparameter space.
+
 ![](plots/heatmap-4-4.png)
 
 It is found that the model with 4 heads and 6 layers perform consistently better than other models both in terms of the mean test loss and evaluation loss. Meanwhile, the improvement by increasing from 5 layers to 6 layers is slim, both in terms of the average and standard deviation. Therefore, the search is ceased though the optimal is at the edge.
+
 ![](plots/hs-6-6-test.png)
+
 ![](error-bar-test-labelled.png)
 
 ### Comparison with RBM
