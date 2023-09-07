@@ -141,3 +141,6 @@ dmypy.json
 _assets/
 
 .vscode/
+model-4-6-1/config.json
+model-4-6-1/pytorch_model.bin
+model-4-6-1/training_args.bin
