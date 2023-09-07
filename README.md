@@ -41,8 +41,10 @@ A model with the lowest test loss was then selected from all 10 models with the 
 ### Hyperparameter selection
 
 ![](plots/hs-4-4-by-head)
+
 As shown in the plot above, increase in number of hidden layers given the same number of heads improves the performance, in the preliminary hyperparameter search. Meanwhile, the difference in model performance due to different number of heads is diminishing with increasing number of layers. Seen from the heatmap below, the optimal combination of hyperparameters is at the boundary so the hyperparameter search is continued with a expanded hyperparameter space.
 ![](plots/heatmap-4-4.png)
+
 It is found that the model with 4 heads and 6 layers perform consistently better than other models both in terms of the mean test loss and evaluation loss. Meanwhile, the improvement by increasing from 5 layers to 6 layers is slim, both in terms of the average and standard deviation. Therefore, the search is ceased though the optimal is at the edge.
 ![](plots/hs-6-6-test.png)
 ![](error-bar-test-labelled.png)
